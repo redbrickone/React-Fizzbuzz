@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import PlusMinusButton from './PlusMinusButton.js';
 
 /**
  * Styles (Styled Components)
@@ -32,8 +33,13 @@ export default function FizzBuzz(props) {
       <Header>
         <h1>React FizzBuzz</h1>
       </Header>
-      <div>{'Replace me with a counter 🔢'}</div>
-      <div>{' There seems to be a PlusMinusButton component 🤔 🤨'}</div>
+      <div>
+        {props.fizzBuzz || props.count}
+      </div>
+      <div>
+        <PlusMinusButton onClick={props.handleDecrementClick}>-</PlusMinusButton>
+        <PlusMinusButton onClick={props.handleIncrementClick}>+</PlusMinusButton>
+      </div>
     </Wrapper>
   );
 }
